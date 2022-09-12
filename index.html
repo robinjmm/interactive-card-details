@@ -1,51 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="My solution for the Interactive Card Details Form challenge from Frontendmentor.io">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive card details form</title>
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Interactive Card Details Form</title>
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
+    <main>
+        <div class="card--gradient">
+            0000 0000 0000 0000
+            Jane Appleseed
+            00/00
+        </div>
 
-  000
+        <div class="card--grey">
+            000
+        </div>
 
-  Cardholder Name
-  e.g. Jane Appleseed
+        <form action="">
+            <div class="form__group">
+                <label for="name">Cardholder Name</label>
+                <input type="text" name="name" id="name" placeholder="e.g. Jane Appleseed">
+            </div>
 
-  Card Number
-  e.g. 1234 5678 9123 0000
+            <div class="form__group">
+                <label for="card-number">Card Number</label>
+                <input type="number" name="card-number" id="card-number" placeholder="e.g. 1234 5678 9123 0000">
+            </div>
 
-  Exp. Date (MM/YY)
-  MM
-  YY
+            <div class="form__group">
+                <label for="exp-date">Exp. Date (MM/YY)</label>
+                <input type="number" name="month" id="exp-date" placeholder="MM">
+                <input type="number" name="year" id="exp-date" placeholder="YY">
+            </div>
 
-  CVC
-  e.g. 123
 
-  Confirm
+            <div class="form__group">
+                <label for="cvc">CVC</label>
+                <input type="number" name="cvc" id="cvc" placeholder="e.g. 123">
+            </div>
 
-  <!-- Completed state start -->
+            <button type="submit">Confirm</button>
+        </form>
 
-  Thank you!
-  We've added your card details
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+        <!-- Completed state start -->
+
+        <article class="success">
+            <p>Thank you!</p>
+            <p>We've added your card details</p>
+            <button>Continue</button>
+        </article>
+    </main>
+
+    <footer>
+        <a href="https://github.com/robinjmm/interactive-card-details" target="_blank" title="GitHub Repo Link">
+            <i class="fa-brands fa-github"></i>
+        </a>
+    </footer>
+
 </body>
+
 </html>
