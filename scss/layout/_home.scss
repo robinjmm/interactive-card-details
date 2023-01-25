@@ -1,0 +1,24 @@
+@use "../base/variables" as *;
+
+body {
+	font-family: var(--ff-primary);
+}
+
+footer {
+	margin-top: toRem(60);
+	text-align: center;
+	padding-bottom: toRem(40);
+}
+
+.cards-bg-container {
+	background: url("/images/bg-main-mobile.png") no-repeat;
+	background-size: cover;
+	height: 240px;
+}
+
+.cards-container {
+	position: relative;
+	max-width: 381px;
+	margin: 0 auto;
+	height: 100%;
+}

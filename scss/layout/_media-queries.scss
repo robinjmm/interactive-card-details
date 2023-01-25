@@ -1,0 +1,11 @@
+@use "../base/variables" as *;
+
+@media (min-width: 23rem) {
+	.card__number {
+		font-size: toRem(18);
+	}
+
+	.form__label {
+		letter-spacing: 2px;
+	}
+}

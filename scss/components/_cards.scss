@@ -1,0 +1,60 @@
+@use "../base/variables" as *;
+
+.card {
+	width: min(76%, 286px);
+	color: var(--text-accent-white);
+	font-weight: var(--fw-regular);
+
+	&--front {
+		position: absolute;
+		z-index: 2;
+		top: toRem(126);
+		left: toRem(16);
+	}
+
+	&--back {
+		position: absolute;
+		top: toRem(32);
+		right: toRem(16);
+	}
+
+	&--front > span, &--back > span {
+		position: absolute;
+	}
+
+	&__cvc {
+		font-size: toRem(12);
+		top: 44%;
+		right: 12%;
+	}
+
+	&__number {
+		top: 52%;
+		left: 6%;
+		font-size: toRem(14);
+		letter-spacing: 2px;
+	}
+
+	&__owner, &__expiry {
+		top: 78%;
+		font-size: toRem(12);
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+	&__owner {
+		left: 6%;
+	}
+
+	&__expiry {
+		right: 6%;
+	}
+
+	&__logo {
+		position: absolute;
+		width: 54px;
+		height: 30px;
+		top: 11%;
+		left: 6%;
+	}
+}

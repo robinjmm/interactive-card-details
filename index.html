@@ -2,72 +2,82 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="My solution for the Interactive Card Details Form challenge from Frontendmentor.io">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		  content="My solution for the Interactive Card Details Form challenge from Frontendmentor.io">
 
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
 
-    <title>Interactive Card Details Form</title>
+	<title>Interactive Card Details Form</title>
 </head>
 
 <body>
 
-    <main>
-        <div class="card--gradient">
-            0000 0000 0000 0000
-            Jane Appleseed
-            00/00
-        </div>
+	<main>
+		<div class="cards-bg-container">
+			<div class="cards-container">
+				<div class="card card--front">
+					<img class="card__logo" src="/images/card-logo.svg" alt="Two circle logos">
+					<img src="/images/bg-card-front.png" alt="Front side of a credit card">
+					<span class="card__number">0000 0000 0000 0000</span>
+					<span class="card__owner">Jane Appleseed</span>
+					<span class="card__expiry">00/00</span>
+				</div>
 
-        <div class="card--grey">
-            000
-        </div>
+				<div class="card card--back">
+					<img src="/images/bg-card-back.png" alt="Back side of a credit card">
+					<span class="card__cvc">000</span>
+				</div>
+			</div>
+		</div>
 
-        <form action="">
-            <div class="form__group">
-                <label for="name">Cardholder Name</label>
-                <input type="text" name="name" id="name" placeholder="e.g. Jane Appleseed">
-            </div>
+		<form class="form">
+			<div class="form__group">
+				<label class="form__label" for="name">Cardholder Name</label>
+				<input class="form__input" type="text" name="name" id="name" placeholder="e.g. Jane Appleseed">
+			</div>
 
-            <div class="form__group">
-                <label for="card-number">Card Number</label>
-                <input type="number" name="card-number" id="card-number" placeholder="e.g. 1234 5678 9123 0000">
-            </div>
+			<div class="form__group">
+				<label class="form__label" for="card-number">Card Number</label>
+				<input class="form__input" type="number" name="card-number" id="card-number" placeholder="e.g. 1234 5678 9123 0000">
+			</div>
 
-            <div class="form__group">
-                <label for="exp-month">Exp. Date (MM/YY)</label>
-                <input type="number" name="month" id="exp-month" placeholder="MM">
-                <input type="number" name="year" id="exp-year" placeholder="YY">
-            </div>
+			<div class="form__group form__group--grid">
+				<div>
+					<span class="form__label">Exp. Date (MM/YY)</span>
+					<div class="form__group--grid">
+						<input class="form__input" type="number" name="month" id="exp-month" placeholder="MM">
+						<input class="form__input" type="number" name="year" id="exp-year" placeholder="YY">
+					</div>
+				</div>
 
+				<div>
+					<label class="form__label" for="cvc">CVC</label>
+					<input class="form__input" type="number" name="cvc" id="cvc" placeholder="e.g. 123">
+				</div>
+			</div>
 
-            <div class="form__group">
-                <label for="cvc">CVC</label>
-                <input type="number" name="cvc" id="cvc" placeholder="e.g. 123">
-            </div>
+			<button class="button" type="submit">Confirm</button>
+		</form>
 
-            <button type="submit">Confirm</button>
-        </form>
+		<!-- Completed state start -->
 
-        <!-- Completed state start -->
+		<!--        <article class="success">-->
+		<!--            <p>Thank you!</p>-->
+		<!--            <p>We've added your card details</p>-->
+		<!--            <button>Continue</button>-->
+		<!--        </article>-->
+	</main>
 
-        <article class="success">
-            <p>Thank you!</p>
-            <p>We've added your card details</p>
-            <button>Continue</button>
-        </article>
-    </main>
-
-    <footer>
-        <a href="https://github.com/robinjmm/interactive-card-details" target="_blank" title="GitHub Repo Link">
-            <i class="fa-brands fa-github"></i>
-        </a>
-    </footer>
+	<footer>
+		<a href="https://github.com/robinjmm/interactive-card-details" target="_blank" title="GitHub Repo Link">
+			<i class="fa-brands fa-github"></i>
+		</a>
+	</footer>
 
 	<script type="module" src="./js/main.js"></script>
 </body>
