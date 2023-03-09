@@ -4,7 +4,6 @@ import "@styles/styles.scss";
 
 const form = document.querySelector(".js-form");
 const success = document.querySelector(".js-success");
-// const successButton = document.querySelector("")
 const name = document.querySelector(".js-name");
 const nameError = document.querySelector(".js-name-error");
 const number = document.querySelector(".js-number");
@@ -27,19 +26,18 @@ function removeError(element, errorMessage) {
 function isExactLength(element, errorMessage) {
 	const name = element.name;
 	const valueLength = element.value.length;
-	const message = errorMessage.innerText;
 
 	if (name === "card-number" && valueLength !== 16) {
-		message = "Card Number must be 16 digits";
+		errorMessage.innerText = "Card Number must be 16 digits";
 		return false;
 	} else if (name === "month" && valueLength !== 2) {
-		message = "Month must be 2 digits";
+		errorMessage.innerText = "Month must be 2 digits";
 		return false;
 	} else if (name === "year" && valueLength !== 2) {
-		message = "Year must be 2 digits";
+		errorMessage.innerText = "Year must be 2 digits";
 		return false;
 	} else if (name === "cvc" && valueLength !== 3) {
-		message = "CVC must be 3 digits";
+		errorMessage.innerText = "CVC must be 3 digits";
 		return false;
 	} else {
 		return true;
@@ -48,13 +46,12 @@ function isExactLength(element, errorMessage) {
 
 function isNumber(element, errorMessage) {
 	const numericValue = Number(element.value);
-	const message = errorMessage.innerText;
 
 	if (isNaN(numericValue)) {
-		message = "Wrong format, numbers only";
+		errorMessage.innerText = "Wrong format, numbers only";
 		return false;
 	} else if (element.name === "month" && (numericValue > 12 || numericValue < 1)) {
-		message = "Must be a valid Month value";
+		errorMessage.innerText = "Must be a valid Month value";
 		return false;
 	} else {
 		return isExactLength(element, errorMessage);
