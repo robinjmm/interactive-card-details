@@ -35,43 +35,48 @@
 			</div>
 		</div>
 
-		<form class="form">
+		<form class="form js-form">
 			<div class="form__group">
 				<label class="form__label" for="name">Cardholder Name</label>
-				<input class="form__input" type="text" name="name" id="name" placeholder="e.g. Jane Appleseed">
+				<input class="form__input js-name" type="text" name="name" id="name" placeholder="e.g. Jane Appleseed"
+					autocomplete="name">
+				<span class="form__error js-name-error"></span>
 			</div>
 
 			<div class="form__group">
 				<label class="form__label" for="card-number">Card Number</label>
-				<input class="form__input" type="number" name="card-number" id="card-number"
-					placeholder="e.g. 1234 5678 9123 0000">
+				<input class="form__input js-number" type="text" name="card-number" id="card-number"
+					placeholder="e.g. 1234 5678 9123 0000" inputmode="numeric">
+				<span class="form__error js-number-error"></span>
 			</div>
 
 			<div class="form__group form__group--grid">
 				<div>
 					<span class="form__label">Exp. Date (MM/YY)</span>
 					<div class="form__group--grid">
-						<input class="form__input" type="number" name="month" id="exp-month" placeholder="MM">
-						<input class="form__input" type="number" name="year" id="exp-year" placeholder="YY">
+						<input class="form__input js-month" type="text" name="month" id="exp-month" placeholder="MM">
+						<input class="form__input js-year" type="text" name="year" id="exp-year" placeholder="YY">
+						<span class="form__error js-date-error"></span>
 					</div>
 				</div>
 
 				<div>
 					<label class="form__label" for="cvc">CVC</label>
-					<input class="form__input" type="number" name="cvc" id="cvc" placeholder="e.g. 123">
+					<input class="form__input js-cvc" type="text" name="cvc" id="cvc" placeholder="e.g. 123">
+					<span class="form__error js-cvc-error"></span>
 				</div>
 			</div>
 
-			<button class="button" type="submit">Confirm</button>
+			<button class="button js-submit" type="submit">Confirm</button>
 		</form>
 
 		<!-- Completed state start -->
 
-		<!--        <article class="success">-->
+		<!-- <article class="success">-->
 		<!--            <p>Thank you!</p>-->
 		<!--            <p>We've added your card details</p>-->
 		<!--            <button>Continue</button>-->
-		<!--        </article>-->
+		<!--        </article> -->
 	</main>
 
 	<footer>

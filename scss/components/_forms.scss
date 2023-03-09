@@ -13,7 +13,7 @@
 	&__group--grid {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: rem(10);
+		column-gap: rem(10);
 	}
 
 	&__label {
@@ -35,5 +35,22 @@
 			font-size: rem(18);
 			color: var(--text-accent-violet);
 		}
+
+		&:focus-visible {
+			outline: none;
+			border-width: 1px;
+			border-style: solid;
+			border-top-color: var(--grad-violet-1);
+			border-right-color: var(--grad-violet-1);
+			border-left-color: var(--grad-violet-1);
+			border-bottom-color: var(--grad-violet-2);
+		}
+	}
+
+	&__error {
+		color: var(--text-accent-red);
+		font-size: rem(12);
+		margin-top: rem(8);
+		grid-column: 1 / 3;
 	}
 }
