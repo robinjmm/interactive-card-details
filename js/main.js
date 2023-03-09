@@ -2,6 +2,10 @@ import "@fontawesome/fontawesome.min.css";
 import "@fontawesome/brands.min.css";
 import "@styles/styles.scss";
 
+const cardOwner = document.querySelector(".js-card-owner");
+const cardNumber = document.querySelector(".js-card-number");
+const cardExpiry = document.querySelector(".js-card-expiry");
+const cardCVC = document.querySelector(".js-card-cvc");
 const form = document.querySelector(".js-form");
 const success = document.querySelector(".js-success");
 const name = document.querySelector(".js-name");
@@ -25,9 +29,9 @@ function removeError(element, errorMessage) {
 
 function isExactLength(element, errorMessage) {
 	const name = element.name;
-	const valueLength = element.value.length;
+	const valueLength = element.value.trim().length;
 
-	if (name === "card-number" && valueLength !== 16) {
+	if (name === "card-number" && valueLength !== 19) {
 		errorMessage.innerText = "Card Number must be 16 digits";
 		return false;
 	} else if (name === "month" && valueLength !== 2) {
@@ -44,31 +48,35 @@ function isExactLength(element, errorMessage) {
 	}
 }
 
-function isNumber(element, errorMessage) {
-	const numericValue = Number(element.value);
+function isValid(element, errorMessage) {
+	const numericValue = Number(element.value.replace(/\s+/g, ""));
 
 	if (isNaN(numericValue)) {
 		errorMessage.innerText = "Wrong format, numbers only";
 		return false;
-	} else if (element.name === "month" && (numericValue > 12 || numericValue < 1)) {
+	}
+
+	if (element.name === "month" && (numericValue > 12 || numericValue < 1)) {
 		errorMessage.innerText = "Must be a valid Month value";
 		return false;
-	} else {
-		return isExactLength(element, errorMessage);
 	}
+
+	return isExactLength(element, errorMessage);
 }
 
 function isNotEmpty(element, errorMessage) {
 	if (!element.value) {
 		errorMessage.innerText = "Can't be blank";
 		return false;
-	} else {
-		return isNumber(element, errorMessage);
 	}
+
+	return isValid(element, errorMessage);
 }
 
 function validateName() {
-	if (!name.value) {
+	const trimmedValue = name.value.trim();
+
+	if (!trimmedValue) {
 		nameError.innerText = "Can't be blank";
 		showError(name);
 		return false;
@@ -108,23 +116,27 @@ function validateCVC() {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-	name.addEventListener("click", () => {
+	name.addEventListener("input", () => {
 		removeError(name, nameError);
 	});
 
-	number.addEventListener("click", () => {
+	number.addEventListener("input", event => {
 		removeError(number, numberError);
+		const numberInput = event.target;
+		const trimmedValue = numberInput.value.replace(/\s+/g, "");
+		const formattedValue = trimmedValue.replace(/\d{4}(?=\d)/g, "$& ");
+		numberInput.value = formattedValue;
 	});
 
-	month.addEventListener("click", () => {
+	month.addEventListener("input", () => {
 		removeError(month, dateError);
 	});
 
-	year.addEventListener("click", () => {
+	year.addEventListener("input", () => {
 		removeError(year, dateError);
 	});
 
-	cvc.addEventListener("click", () => {
+	cvc.addEventListener("input", () => {
 		removeError(cvc, cvcError);
 	});
 
@@ -136,6 +148,11 @@ window.addEventListener("DOMContentLoaded", () => {
 		if (validations.every(value => value === true)) {
 			success.classList.remove("hidden");
 			form.classList.add("hidden");
+
+			cardOwner.innerText = name.value.toUpperCase();
+			cardNumber.innerText = number.value;
+			cardExpiry.innerText = `${month.value}/${year.value}`;
+			cardCVC.innerText = cvc.value;
 		}
 	});
 })
