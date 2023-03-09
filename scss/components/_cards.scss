@@ -1,4 +1,5 @@
 @use "../base/variables" as *;
+@use "../base/functions" as *;
 
 .card {
 	width: min(76%, 286px);
@@ -8,22 +9,23 @@
 	&--front {
 		position: absolute;
 		z-index: 2;
-		top: toRem(126);
-		left: toRem(16);
+		top: rem(126);
+		left: rem(16);
 	}
 
 	&--back {
 		position: absolute;
-		top: toRem(32);
-		right: toRem(16);
+		top: rem(32);
+		right: rem(16);
 	}
 
-	&--front > span, &--back > span {
+	&--front>span,
+	&--back>span {
 		position: absolute;
 	}
 
 	&__cvc {
-		font-size: toRem(12);
+		font-size: rem(12);
 		top: 44%;
 		right: 12%;
 	}
@@ -31,13 +33,14 @@
 	&__number {
 		top: 52%;
 		left: 6%;
-		font-size: toRem(14);
+		font-size: rem(14);
 		letter-spacing: 2px;
 	}
 
-	&__owner, &__expiry {
+	&__owner,
+	&__expiry {
 		top: 78%;
-		font-size: toRem(12);
+		font-size: rem(12);
 		text-transform: uppercase;
 		letter-spacing: 1px;
 	}

@@ -1,0 +1,11 @@
+// Convert pixel values to rems
+@function rem($value) {
+    $remValue: calc(($value / 16) * 1rem);
+    @return $remValue;
+}
+
+// Convert pixels to ems
+@function em($value, $base-font-size) {
+    $emValue: calc(($value / $base-font-size) * 1em);
+    @return $emValue;
+}

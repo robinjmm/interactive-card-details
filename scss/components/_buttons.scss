@@ -1,14 +1,15 @@
 @use "../base/variables" as *;
+@use "../base/functions" as *;
 
 .button {
-	margin-top: toRem(28);
+	margin-top: rem(28);
 	background-color: var(--bg-button);
 	border: none;
 	cursor: pointer;
 	color: var(--text-accent-white);
-	font-size: toRem(18);
+	font-size: rem(18);
 	text-align: center;
 	width: 100%;
-	padding: toRem(14) 0;
+	padding: rem(14) 0;
 	border-radius: 8px;
 }

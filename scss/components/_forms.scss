@@ -1,37 +1,38 @@
 @use "../base/variables" as *;
+@use "../base/functions" as *;
 
 .form {
 	width: min(87%, 381px);
-	margin: toRem(90) auto 0;
+	margin: rem(90) auto 0;
 	font-weight: var(--fw-regular);
 
 	&__group:not(:last-of-type) {
-		margin-bottom: toRem(20);
+		margin-bottom: rem(20);
 	}
 
 	&__group--grid {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: toRem(10);
+		gap: rem(10);
 	}
 
 	&__label {
 		display: block;
-		font-size: toRem(12);
+		font-size: rem(12);
 		color: var(--text-primary);
 		text-transform: uppercase;
 		letter-spacing: 1px;
-		margin-bottom: toRem(8);
+		margin-bottom: rem(8);
 	}
 
 	&__input {
 		width: 100%;
 		border: 1px solid var(--border-input);
 		border-radius: 8px;
-		padding: toRem(10) toRem(16);
+		padding: rem(10) rem(16);
 
 		&::placeholder {
-			font-size: toRem(18);
+			font-size: rem(18);
 			color: var(--text-accent-violet);
 		}
 	}

@@ -1,13 +1,14 @@
 @use "../base/variables" as *;
+@use "../base/functions" as *;
 
 body {
 	font-family: var(--ff-primary);
 }
 
 footer {
-	margin-top: toRem(60);
+	margin-top: rem(60);
 	text-align: center;
-	padding-bottom: toRem(40);
+	padding-bottom: rem(40);
 }
 
 .cards-bg-container {
