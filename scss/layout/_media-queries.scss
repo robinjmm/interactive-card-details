@@ -1,11 +1,74 @@
 @use "../base/variables" as *;
+@use "../base/functions" as *;
 
 @media (min-width: 23rem) {
 	.card__number {
-		font-size: toRem(18);
+		font-size: rem(18);
 	}
 
 	.form__label {
 		letter-spacing: 2px;
+	}
+}
+
+@media (min-width: 90rem) {
+	body {
+		position: relative;
+	}
+
+	main {
+		display: grid;
+		grid-template-columns: 483px auto;
+	}
+
+	.cards-bg-container {
+		background: url("/images/bg-main-desktop.png") no-repeat;
+		background-size: cover;
+		min-height: 100vh;
+	}
+
+	.cards-container {
+		margin: 0;
+		width: 100%;
+		max-width: none;
+	}
+
+	.card {
+		width: 447px;
+
+		&--front {
+			top: 186px;
+			left: 164px;
+		}
+
+		&--back {
+			top: 470px;
+			left: 258px;
+		}
+
+		&__number {
+			font-size: rem(28);
+		}
+
+		&__owner,
+		&__expiry,
+		&__cvc {
+			font-size: rem(14);
+		}
+	}
+
+	.form,
+	.success {
+		margin-top: rem(275);
+		justify-self: center;
+		grid-column: 2 / 3;
+		grid-row: 1 / 2;
+	}
+
+	footer {
+		padding-bottom: rem(30);
+		grid-column: 2 / 3;
+		grid-row: 1 / 2;
+		align-self: end;
 	}
 }
