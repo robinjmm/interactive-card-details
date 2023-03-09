@@ -3,6 +3,8 @@ import "@fontawesome/brands.min.css";
 import "@styles/styles.scss";
 
 const form = document.querySelector(".js-form");
+const success = document.querySelector(".js-success");
+// const successButton = document.querySelector("")
 const name = document.querySelector(".js-name");
 const nameError = document.querySelector(".js-name-error");
 const number = document.querySelector(".js-number");
@@ -135,7 +137,8 @@ window.addEventListener("DOMContentLoaded", () => {
 		const validations = [validateName(), validateNumber(), validateDate(), validateCVC()];
 
 		if (validations.every(value => value === true)) {
-			console.log("All Valid");
+			success.classList.remove("hidden");
+			form.classList.add("hidden");
 		}
 	});
 })

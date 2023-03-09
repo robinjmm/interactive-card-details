@@ -17,4 +17,9 @@
 		outline-offset: 3px;
 		outline-color: var(--grad-violet-1);
 	}
+
+	&--success {
+		margin-top: 0;
+		display: block;
+	}
 }
