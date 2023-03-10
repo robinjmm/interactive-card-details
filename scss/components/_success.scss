@@ -11,14 +11,14 @@
     }
 
     &__heading {
-        font-size: rem(28);
+        font-size: var(--fs-xl);
         text-transform: uppercase;
         letter-spacing: 3px;
         margin-bottom: rem(16);
     }
 
     &__subheading {
-        font-size: rem(18);
+        font-size: var(--fs-lg);
         color: var(--text-accent-violet);
         margin-bottom: rem(48);
     }

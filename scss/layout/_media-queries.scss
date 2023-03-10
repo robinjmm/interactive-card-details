@@ -2,7 +2,7 @@
 
 @media (min-width: 23rem) {
 	.card__number {
-		font-size: rem(18);
+		font-size: var(--fs-lg);
 	}
 
 	.form__label {
@@ -51,13 +51,13 @@
 		}
 
 		&__number {
-			font-size: rem(28);
+			font-size: var(--fs-xl);
 		}
 
 		&__owner,
 		&__expiry,
 		&__cvc {
-			font-size: rem(14);
+			font-size: var(--fs-md);
 		}
 	}
 

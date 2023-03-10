@@ -17,7 +17,7 @@
 
 	&__label {
 		display: block;
-		font-size: rem(12);
+		font-size: var(--fs-sm);
 		color: var(--text-primary);
 		text-transform: uppercase;
 		letter-spacing: 1px;
@@ -25,14 +25,14 @@
 	}
 
 	&__input {
-		font-size: rem(18);
+		font-size: var(--fs-lg);
 		width: 100%;
 		border: 1px solid var(--border-input);
 		border-radius: 8px;
 		padding: rem(10) rem(16);
 
 		&::placeholder {
-			font-size: rem(18);
+			font-size: inherit;
 			color: var(--text-accent-violet);
 		}
 
@@ -49,7 +49,7 @@
 
 	&__error {
 		color: var(--text-accent-red);
-		font-size: rem(12);
+		font-size: var(--fs-sm);
 		margin-top: rem(8);
 		grid-column: 1 / 3;
 	}

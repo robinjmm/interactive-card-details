@@ -31,7 +31,7 @@
 	}
 
 	&__cvc {
-		font-size: rem(9);
+		font-size: var(--fs-xs);
 		top: 45%;
 		right: 12%;
 	}
@@ -39,14 +39,14 @@
 	&__number {
 		top: 52%;
 		left: 6%;
-		font-size: rem(14);
+		font-size: var(--fs-md);
 		letter-spacing: 2px;
 	}
 
 	&__owner,
 	&__expiry {
 		top: 78%;
-		font-size: rem(9);
+		font-size: var(--fs-xs);
 		text-transform: uppercase;
 		letter-spacing: 1px;
 	}
