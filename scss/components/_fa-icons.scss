@@ -1,6 +1,13 @@
 @use "../base/variables" as *;
 @use "../base/functions" as *;
 
+.fa-icon {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	margin: rem(40) 0;
+}
+
 .fa-github {
 	font-size: rem(28);
 	cursor: pointer;
