@@ -1,10 +1,12 @@
-@use "../base/variables" as *;
 @use "../base/functions" as *;
 
 .card {
 	width: min(76%, 286px);
+	height: 157px;
 	color: var(--text-accent-white);
 	font-weight: var(--fw-regular);
+	border-radius: 5px;
+	box-shadow: 0 15px 29px 0 rgba(0, 0, 0, .1);
 
 	&--front {
 		position: absolute;
@@ -17,6 +19,10 @@
 		position: absolute;
 		top: rem(32);
 		right: rem(16);
+	}
+
+	&__img {
+		height: 100%;
 	}
 
 	&--front>span,
