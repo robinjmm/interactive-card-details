@@ -1,5 +1,5 @@
-import {defineConfig} from "vite";
-import {createHtmlPlugin} from "vite-plugin-html";
+import { defineConfig } from "vite";
+import { createHtmlPlugin } from "vite-plugin-html";
 import postcssPresetEnv from "postcss-preset-env";
 import purgeCSSPlugin from "@fullhuman/postcss-purgecss";
 import path from "path";
@@ -8,13 +8,13 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			"@styles": path.resolve(__dirname, "./scss"),
-			"@fontawesome": path.resolve(__dirname, "./node_modules/@fortawesome/fontawesome-free/css")
-		}
+			"@fontawesome": path.resolve(__dirname, "./node_modules/@fortawesome/fontawesome-free/css"),
+		},
 	},
 	plugins: [
 		createHtmlPlugin({
-			minify: true
-		})
+			minify: true,
+		}),
 	],
 	css: {
 		postcss: {
@@ -23,9 +23,9 @@ export default defineConfig({
 				purgeCSSPlugin({
 					content: ["./index.html"],
 					variables: true,
-					keyframes: true
-				})
-			]
-		}
-	}
-})
+					keyframes: true,
+				}),
+			],
+		},
+	},
+});

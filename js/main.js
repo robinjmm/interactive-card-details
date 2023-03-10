@@ -1,5 +1,8 @@
+// eslint-disable-next-line import/no-unresolved
 import "@fontawesome/fontawesome.min.css";
+// eslint-disable-next-line import/no-unresolved
 import "@fontawesome/brands.min.css";
+// eslint-disable-next-line import/no-unresolved
 import "@styles/styles.scss";
 
 const cardOwner = document.querySelector(".js-card-owner");
@@ -23,41 +26,50 @@ function showError(element) {
 }
 
 function removeError(element, errorMessage) {
+	const message = errorMessage;
 	element.classList.remove("input-error");
-	errorMessage.innerText = "";
+	message.innerText = "";
 }
 
 function isExactLength(element, errorMessage) {
-	const name = element.name;
+	const { name: inputName } = element;
+	const message = errorMessage;
 	const valueLength = element.value.trim().length;
 
-	if (name === "card-number" && valueLength !== 19) {
-		errorMessage.innerText = "Card Number must be 16 digits";
+	if (inputName === "card-number" && valueLength !== 19) {
+		message.innerText = "Card Number must be 16 digits";
 		return false;
-	} else if (name === "month" && valueLength !== 2) {
-		errorMessage.innerText = "Month must be 2 digits";
-		return false;
-	} else if (name === "year" && valueLength !== 2) {
-		errorMessage.innerText = "Year must be 2 digits";
-		return false;
-	} else if (name === "cvc" && valueLength !== 3) {
-		errorMessage.innerText = "CVC must be 3 digits";
-		return false;
-	} else {
-		return true;
 	}
+
+	if (inputName === "month" && valueLength !== 2) {
+		message.innerText = "Month must be 2 digits";
+		return false;
+	}
+
+	if (inputName === "year" && valueLength !== 2) {
+		message.innerText = "Year must be 2 digits";
+		return false;
+	}
+
+	if (inputName === "cvc" && valueLength !== 3) {
+		message.innerText = "CVC must be 3 digits";
+		return false;
+	}
+
+	return true;
 }
 
 function isValid(element, errorMessage) {
+	const message = errorMessage;
 	const numericValue = Number(element.value.replace(/\s+/g, ""));
 
-	if (isNaN(numericValue)) {
-		errorMessage.innerText = "Wrong format, numbers only";
+	if (Number.isNaN(numericValue)) {
+		message.innerText = "Wrong format, numbers only";
 		return false;
 	}
 
 	if (element.name === "month" && (numericValue > 12 || numericValue < 1)) {
-		errorMessage.innerText = "Must be a valid Month value";
+		message.innerText = "Must be a valid Month value";
 		return false;
 	}
 
@@ -65,8 +77,9 @@ function isValid(element, errorMessage) {
 }
 
 function isNotEmpty(element, errorMessage) {
+	const message = errorMessage;
 	if (!element.value) {
-		errorMessage.innerText = "Can't be blank";
+		message.innerText = "Can't be blank";
 		return false;
 	}
 
@@ -86,33 +99,35 @@ function validateName() {
 }
 
 function validateNumber() {
-	if (isNotEmpty(number, numberError)) {
-		return true;
-	} else {
+	if (!isNotEmpty(number, numberError)) {
 		showError(number);
 		return false;
 	}
+
+	return true;
 }
 
 function validateDate() {
 	if (!isNotEmpty(month, dateError)) {
 		showError(month);
 		return false;
-	} else if (!isNotEmpty(year, dateError)) {
+	}
+
+	if (!isNotEmpty(year, dateError)) {
 		showError(year);
 		return false;
-	} else {
-		return true;
 	}
+
+	return true;
 }
 
 function validateCVC() {
-	if (isNotEmpty(cvc, cvcError)) {
-		return true;
-	} else {
+	if (!isNotEmpty(cvc, cvcError)) {
 		showError(cvc);
 		return false;
 	}
+
+	return true;
 }
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -120,7 +135,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		removeError(name, nameError);
 	});
 
-	number.addEventListener("input", event => {
+	number.addEventListener("input", (event) => {
 		removeError(number, numberError);
 		const numberInput = event.target;
 		const trimmedValue = numberInput.value.replace(/\s+/g, "");
@@ -140,12 +155,12 @@ window.addEventListener("DOMContentLoaded", () => {
 		removeError(cvc, cvcError);
 	});
 
-	form.addEventListener("submit", event => {
+	form.addEventListener("submit", (event) => {
 		event.preventDefault();
 
 		const validations = [validateName(), validateNumber(), validateDate(), validateCVC()];
 
-		if (validations.every(value => value === true)) {
+		if (validations.every((value) => value === true)) {
 			success.classList.remove("hidden");
 			form.classList.add("hidden");
 
@@ -155,4 +170,4 @@ window.addEventListener("DOMContentLoaded", () => {
 			cardCVC.innerText = cvc.value;
 		}
 	});
-})
+});
