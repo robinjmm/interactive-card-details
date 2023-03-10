@@ -54,15 +54,18 @@
 				<div>
 					<span class="form__label">Exp. Date (MM/YY)</span>
 					<div class="form__group--grid">
-						<input class="form__input js-month" type="text" name="month" id="exp-month" placeholder="MM">
-						<input class="form__input js-year" type="text" name="year" id="exp-year" placeholder="YY">
+						<input class="form__input js-month" type="text" name="month" id="exp-month" placeholder="MM"
+							inputmode="numeric">
+						<input class="form__input js-year" type="text" name="year" id="exp-year" placeholder="YY"
+							inputmode="numeric">
 						<span class="form__error js-date-error"></span>
 					</div>
 				</div>
 
 				<div>
 					<label class="form__label" for="cvc">CVC</label>
-					<input class="form__input js-cvc" type="text" name="cvc" id="cvc" placeholder="e.g. 123">
+					<input class="form__input js-cvc" type="text" name="cvc" id="cvc" placeholder="e.g. 123"
+						inputmode="numeric">
 					<span class="form__error js-cvc-error"></span>
 				</div>
 			</div>
@@ -85,8 +88,6 @@
 			</a>
 		</footer>
 	</main>
-
-
 
 	<script type="module" src="./js/main.js"></script>
 </body>
