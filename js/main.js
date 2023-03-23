@@ -1,9 +1,6 @@
-// eslint-disable-next-line import/no-unresolved
-import "@fontawesome/fontawesome.min.css";
-// eslint-disable-next-line import/no-unresolved
-import "@fontawesome/brands.min.css";
-// eslint-disable-next-line import/no-unresolved
-import "@styles/styles.scss";
+import "@fortawesome/fontawesome-free/css/fontawesome.css";
+import "@fortawesome/fontawesome-free/css/brands.css";
+import "../scss/styles.scss";
 
 const cardOwner = document.querySelector(".js-card-owner");
 const cardNumber = document.querySelector(".js-card-number");
