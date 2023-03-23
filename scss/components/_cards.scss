@@ -1,4 +1,4 @@
-@use "../base/functions" as *;
+@use "../base/abstracts" as *;
 
 .card {
 	width: min(76%, 286px);
@@ -25,13 +25,13 @@
 		height: 100%;
 	}
 
-	&--front>span,
-	&--back>span {
+	&--front > span,
+	&--back > span {
 		position: absolute;
 	}
 
 	&__cvc {
-		font-size: var(--fs-xs);
+		font-size: var(--9px);
 		top: 45%;
 		right: 12%;
 	}
@@ -39,14 +39,14 @@
 	&__number {
 		top: 52%;
 		left: 6%;
-		font-size: var(--fs-md);
+		font-size: var(--14px);
 		letter-spacing: 2px;
 	}
 
 	&__owner,
 	&__expiry {
 		top: 78%;
-		font-size: var(--fs-xs);
+		font-size: var(--9px);
 		text-transform: uppercase;
 		letter-spacing: 1px;
 	}

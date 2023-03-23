@@ -1,8 +1,8 @@
-@use "../base/functions" as *;
+@use "../base/abstracts" as *;
 
 @media (min-width: 23rem) {
 	.card__number {
-		font-size: var(--fs-lg);
+		font-size: var(--18px);
 	}
 
 	.form__label {
@@ -51,13 +51,13 @@
 		}
 
 		&__number {
-			font-size: var(--fs-xl);
+			font-size: var(--28px);
 		}
 
 		&__owner,
 		&__expiry,
 		&__cvc {
-			font-size: var(--fs-md);
+			font-size: var(--14px);
 		}
 	}
 

@@ -1,25 +1,25 @@
-@use "../base/functions" as *;
+@use "../base/abstracts" as *;
 
 .success {
-    width: min(87%, 381px);
-    margin: rem(90) auto 0;
-    text-align: center;
+	width: min(87%, 381px);
+	margin: rem(90) auto 0;
+	text-align: center;
 
-    &__img {
-        margin: 0 auto;
-        margin-bottom: rem(35);
-    }
+	&__img {
+		margin: 0 auto;
+		margin-bottom: rem(35);
+	}
 
-    &__heading {
-        font-size: var(--fs-xl);
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        margin-bottom: rem(16);
-    }
+	&__heading {
+		font-size: var(--28px);
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		margin-bottom: rem(16);
+	}
 
-    &__subheading {
-        font-size: var(--fs-lg);
-        color: var(--text-accent-violet);
-        margin-bottom: rem(48);
-    }
+	&__subheading {
+		font-size: var(--18px);
+		color: var(--text-accent-violet);
+		margin-bottom: rem(48);
+	}
 }

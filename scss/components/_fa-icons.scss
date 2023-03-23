@@ -1,4 +1,4 @@
-@use "../base/functions" as *;
+@use "../base/abstracts" as *;
 
 .fa-icon {
 	display: inline-block;
@@ -8,7 +8,7 @@
 }
 
 .fa-github {
-	font-size: var(--fs-xl);
+	font-size: var(--28px);
 	cursor: pointer;
 	color: var(--text-primary);
 }

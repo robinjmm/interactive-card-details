@@ -1,4 +1,4 @@
-@use "../base/functions" as *;
+@use "../base/abstracts" as *;
 
 .button {
 	margin-top: rem(28);
@@ -6,7 +6,7 @@
 	border: none;
 	cursor: pointer;
 	color: var(--text-accent-white);
-	font-size: var(--fs-lg);
+	font-size: var(--18px);
 	text-align: center;
 	width: 100%;
 	padding: rem(14) 0;
